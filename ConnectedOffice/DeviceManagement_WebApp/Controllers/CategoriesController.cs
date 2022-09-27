@@ -12,14 +12,16 @@ namespace DeviceManagement_WebApp.Controllers
 {
     public class CategoriesController : Controller
     {
-        private readonly ConnectedOfficeContext _context;
-
-        public CategoriesController(ConnectedOfficeContext context)
+        public async Task<IActionResult> Index()
         {
-            _context = context;
+            CategoriesRepository CategoriesRepository = new CategoriesRepository();
+
+            var results = CategoriesRepository.Getall();
+
+            return View(results);
         }
 
-        // GET: Categories
+       /* // GET: Categories
         public async Task<IActionResult> Index()
         {
             return View(await _context.Category.ToListAsync());
@@ -140,6 +142,6 @@ namespace DeviceManagement_WebApp.Controllers
         private bool CategoryExists(Guid id)
         {
             return _context.Category.Any(e => e.CategoryId == id);
-        }
+        }*/
     }
 }
