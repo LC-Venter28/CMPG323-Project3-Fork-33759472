@@ -8,7 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using DeviceManagement_WebApp.Data;
 using DeviceManagement_WebApp.Models;
 
-public interface IZonesRepository<T> where T : class
+public interface IZonesRepository : IGenericRepository<Zone>
 {
+    Zone GetMostRecentZone();
 }
 

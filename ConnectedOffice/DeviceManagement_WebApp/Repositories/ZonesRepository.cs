@@ -8,13 +8,23 @@ using Microsoft.EntityFrameworkCore;
 using DeviceManagement_WebApp.Data;
 using DeviceManagement_WebApp.Models;
 
-public class ZonesRepository
+public class ZonesRepository : GenericRepository<Zone>, IZonesRepository
 {
     private readonly ConnectedOfficeContext _context = new ConnectedOfficeContext();
 
-    public List<Zone> Getall()
+    public ZonesRepository(ConnectedOfficeContext context) : base(context)
     {
-        return _context.Zone.ToList();
+
+    }
+
+    public Device GetMostRecentDevice()
+    {
+        return _context.Device.OrderByDescending(device => device.DateCreated).FirstOrDefault();
+    }
+
+    public Zone GetMostRecentZone()
+    {
+        throw new NotImplementedException();
     }
 
     /*// GET: Zones
