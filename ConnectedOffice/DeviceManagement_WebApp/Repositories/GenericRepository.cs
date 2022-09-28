@@ -36,7 +36,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
         return _context.Set<T>().ToList();
     }
 
-    public T GetById(int id)
+    public T GetById(Guid? id)
     {
         return _context.Set<T>().Find(id);
     }
@@ -49,6 +49,21 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
     public void RemoveRange(IEnumerable<T> entities)
     {
         _context.Set<T>().RemoveRange(entities);
+    }
+
+    public bool CatExists(Guid id)
+    {
+        return true;
+    }
+
+    public bool DevExists(Guid id)
+    {
+        return true;
+    }
+
+    public bool ZoneExists(Guid id)
+    {
+        return true;
     }
 }
 

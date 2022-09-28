@@ -8,7 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using DeviceManagement_WebApp.Data;
 using DeviceManagement_WebApp.Models;
 
-public interface ICategoriesRepository<T> where T : class
+public interface ICategoriesRepository : IGenericRepository<Category>
 {
+    Category GetMostRecentCategory();
 }
 
