@@ -12,7 +12,7 @@ namespace DeviceManagement_WebApp.Controllers
 {
     public class DevicesController : Controller
     {
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             DeviceRepository DeviceRepository = new DeviceRepository();
 

@@ -12,7 +12,7 @@ namespace DeviceManagement_WebApp.Controllers
 {
     public class ZonesController : Controller
     {
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             ZonesRepository ZonesRepository = new ZonesRepository();
 

@@ -12,7 +12,7 @@ namespace DeviceManagement_WebApp.Controllers
 {
     public class CategoriesController : Controller
     {
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             CategoriesRepository CategoriesRepository = new CategoriesRepository();
 
