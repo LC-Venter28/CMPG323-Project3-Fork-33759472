@@ -25,3 +25,14 @@ This webapp has been published to Azure through the CMPG323 resource group and m
 ## Branching stratedgy
 I had made a development branch for this project however I encountered a lot of issues with using it therefore, I decided not to make use of it for the final project.
 
+## Screenshots
+Here are some screenshots of how a few of the pages will look like:
+
+Login Page
+![alt text](https://github.com/LC-Venter28/CMPG323-Project3-Fork-33759472/blob/main/Login_Page.png)
+
+Home Page
+![alt text](https://github.com/LC-Venter28/CMPG323-Project3-Fork-33759472/blob/main/Home_Page.png)
+
+Categories Page
+![alt text](https://github.com/LC-Venter28/CMPG323-Project3-Fork-33759472/blob/main/Categories_Page.png)
