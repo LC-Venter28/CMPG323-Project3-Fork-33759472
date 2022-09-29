@@ -38,7 +38,7 @@ namespace DeviceManagement_WebApp.Controllers
             {
                 return NotFound();
             }
-
+            _categoriesRepository.Update(category);
             return View(category);
         }
 
@@ -70,11 +70,11 @@ namespace DeviceManagement_WebApp.Controllers
             }
 
             var category = _categoriesRepository.GetById(id);
-            _categoriesRepository.Update(category);
             if (category == null)
             {
                 return NotFound();
             }
+            _categoriesRepository.Update(category);
             return View(category);
         }
 
