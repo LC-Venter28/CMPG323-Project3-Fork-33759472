@@ -5,6 +5,13 @@ https://stackoverflow.com/questions/44574358/ef-core-no-database-provider-has-be
 https://stackoverflow.com/questions/61270394/no-database-provider-has-been-configured-for-this-dbcontext
 https://www.dofactory.com/net/design-patterns
 https://refactoring.guru/design-patterns/csharp
+https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/generic-interfaces
 https://www.c-sharpcorner.com/UploadFile/bd5be5/design-patterns-in-net/
 https://www.dotnettricks.com/learn/designpatterns
 https://stackoverflow.com/questions/3757858/cannot-implicitly-convert-type-customtype-to-othercustomtype
+https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/generic-classes
+https://stackoverflow.com/questions/3606595/understanding-c-sharp-generics-much-better/3606655
+https://medium.com/@salimalamdeveloper/understanding-builder-design-pattern-in-c-89977cd930c1
+https://stackoverflow.com/questions/20853024/with-repository-pattern-should-we-define-classes-for-every-table-in-dal-or-objec
+https://stackoverflow.com/questions/49626650/using-service-classes-and-repository-classes-in-projects
+https://www.codeguru.com/csharp/repository-pattern-c-sharp/
