@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DeviceManagement_WebApp.Models;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,9 @@ public interface IGenericRepository<T> where T : class
     bool DevExists(Guid id);
     bool ZoneExists(Guid id);
     void SaveChanges();
+    object ShowCat(Device device);
+    object ShowZone(Device device);
+    void Update(T entity);
 }
 
 

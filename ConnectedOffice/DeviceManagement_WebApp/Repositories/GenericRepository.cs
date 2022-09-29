@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 public class GenericRepository<T> : IGenericRepository<T> where T : class
 {
@@ -81,6 +82,23 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
     public Zone GetZone(Zone zone)
     {
         return _context.Zone.Find(zone.ZoneId);
+    }
+
+    public object ShowCat(Device device)
+    {
+        SelectList CatID = new SelectList(_context.Category, "CategoryId", "CategoryName", device.CategoryId);
+        return CatID;
+    }
+    public object ShowZone(Device device)
+    {
+        SelectList ZoneID = new SelectList(_context.Zone, "ZoneId", "ZoneName", device.ZoneId);
+        return ZoneID;
+    }
+
+    public void Update(T entity)
+    {
+        _context.Set<T>().Update(entity);
+        SaveChanges();
     }
 }
 

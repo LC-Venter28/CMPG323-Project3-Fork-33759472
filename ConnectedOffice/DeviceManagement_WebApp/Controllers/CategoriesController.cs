@@ -89,7 +89,7 @@ namespace DeviceManagement_WebApp.Controllers
             }
             try
             {
-                _categoriesRepository.Add(category);
+                _categoriesRepository.Update(category);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -105,7 +105,7 @@ namespace DeviceManagement_WebApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        /*// GET: Categories/Delete/5
+        // GET: Categories/Delete/5
         public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
@@ -113,7 +113,7 @@ namespace DeviceManagement_WebApp.Controllers
                 return NotFound();
             }
 
-            var category = _categoriesRepository.Remove();
+            var category = _categoriesRepository.GetById(id);
             if (category == null)
             {
                 return NotFound();
@@ -127,10 +127,10 @@ namespace DeviceManagement_WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var category = _categoriesRepository.Remove(id);
+            var category = _categoriesRepository.GetById(id);
             _categoriesRepository.Remove(category);
             return RedirectToAction(nameof(Index));
-        }*/
+        }
 
         private bool CategoryExists(Guid id)
         {
