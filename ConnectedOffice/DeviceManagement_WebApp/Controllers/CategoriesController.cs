@@ -33,6 +33,7 @@ namespace DeviceManagement_WebApp.Controllers
             }
 
             var category = _categoriesRepository.GetById(id);
+            _categoriesRepository.Update(category);
             if (category == null)
             {
                 return NotFound();
@@ -56,7 +57,7 @@ namespace DeviceManagement_WebApp.Controllers
         {
             category.CategoryId = Guid.NewGuid();
             _categoriesRepository.Add(category);
-            //_categoriesRepository.SaveChanges();
+            _categoriesRepository.Update(category);
             return RedirectToAction(nameof(Index));
         }
 
@@ -69,6 +70,7 @@ namespace DeviceManagement_WebApp.Controllers
             }
 
             var category = _categoriesRepository.GetById(id);
+            _categoriesRepository.Update(category);
             if (category == null)
             {
                 return NotFound();
@@ -102,6 +104,7 @@ namespace DeviceManagement_WebApp.Controllers
                     throw;
                 }
             }
+            _categoriesRepository.Update(category);
             return RedirectToAction(nameof(Index));
         }
 
@@ -114,6 +117,7 @@ namespace DeviceManagement_WebApp.Controllers
             }
 
             var category = _categoriesRepository.GetById(id);
+            _categoriesRepository.Update(category);
             if (category == null)
             {
                 return NotFound();
@@ -129,6 +133,7 @@ namespace DeviceManagement_WebApp.Controllers
         {
             var category = _categoriesRepository.GetById(id);
             _categoriesRepository.Remove(category);
+            _categoriesRepository.Update(category);
             return RedirectToAction(nameof(Index));
         }
 

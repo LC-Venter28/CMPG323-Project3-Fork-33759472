@@ -69,32 +69,39 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
         return true;
     }
 
+    //Saves changes to database
     public void SaveChanges()
     {
         _context.SaveChangesAsync();
     }
 
+    //Get CategoryID
     public Category GetCategory(Category category)
     {
         return _context.Category.Find(category.CategoryId);
     }
 
+    //Get ZoneID
     public Zone GetZone(Zone zone)
     {
         return _context.Zone.Find(zone.ZoneId);
     }
 
+    //Get CategoryID from Devices
     public object ShowCat(Device device)
     {
         SelectList CatID = new SelectList(_context.Category, "CategoryId", "CategoryName", device.CategoryId);
         return CatID;
     }
+    
+    //Get ZoneID from Devices
     public object ShowZone(Device device)
     {
         SelectList ZoneID = new SelectList(_context.Zone, "ZoneId", "ZoneName", device.ZoneId);
         return ZoneID;
     }
 
+    //Updates Views
     public void Update(T entity)
     {
         _context.Set<T>().Update(entity);

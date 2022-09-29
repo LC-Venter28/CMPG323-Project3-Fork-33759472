@@ -15,9 +15,9 @@ public interface IGenericRepository<T> where T : class
     void AddRange(IEnumerable<T> entities);
     void Remove(T entity);
     void RemoveRange(IEnumerable<T> entities);
-    bool CatExists(Guid id);
-    bool DevExists(Guid id);
-    bool ZoneExists(Guid id);
+    bool CatExists(Guid id); //Checks if Category exists
+    bool DevExists(Guid id); //Checks if Device exists
+    bool ZoneExists(Guid id); //Checks if Zone exists
     void SaveChanges();
     object ShowCat(Device device);
     object ShowZone(Device device);

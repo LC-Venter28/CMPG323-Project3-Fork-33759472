@@ -3,3 +3,8 @@ My Refrence List for CMPG323 Project 3.
 https://social.msdn.microsoft.com/Forums/lync/en-US/f4ed7cd6-cc1b-4584-9edf-257583fe8e76/ef-core-invalidoperationexception-no-database-provider-has-been-configured-for-this-dbcontext?forum=aspadoentitylinq
 https://stackoverflow.com/questions/44574358/ef-core-no-database-provider-has-been-configured-for-this-dbcontext
 https://stackoverflow.com/questions/61270394/no-database-provider-has-been-configured-for-this-dbcontext
+https://www.dofactory.com/net/design-patterns
+https://refactoring.guru/design-patterns/csharp
+https://www.c-sharpcorner.com/UploadFile/bd5be5/design-patterns-in-net/
+https://www.dotnettricks.com/learn/designpatterns
+https://stackoverflow.com/questions/3757858/cannot-implicitly-convert-type-customtype-to-othercustomtype

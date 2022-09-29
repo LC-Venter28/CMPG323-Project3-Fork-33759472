@@ -33,8 +33,9 @@ namespace DeviceManagement_WebApp.Controllers
             }
 
             var device = _deviceRepository.GetById(id);
-    
-        if (device == null)
+            _deviceRepository.Update(device);
+
+            if (device == null)
             {
                 return NotFound();
             }
@@ -60,7 +61,7 @@ namespace DeviceManagement_WebApp.Controllers
     {
         device.DeviceId = Guid.NewGuid();
         _deviceRepository.Add(device);
-        
+        _deviceRepository.Update(device);
         return RedirectToAction(nameof(Index));
 
 
@@ -75,6 +76,7 @@ namespace DeviceManagement_WebApp.Controllers
         }
 
         var device = _deviceRepository.GetById(id);
+        _deviceRepository.Update(device);
         if (device == null)
         {
             return NotFound();
@@ -97,7 +99,7 @@ namespace DeviceManagement_WebApp.Controllers
         }
         try
         {
-                _deviceRepository.Add(device);
+                _deviceRepository.Update(device);
         }
         catch (DbUpdateConcurrencyException)
         {
@@ -114,7 +116,7 @@ namespace DeviceManagement_WebApp.Controllers
 
     }
 
-    /*// GET: Devices/Delete/5
+    // GET: Devices/Delete/5
     public async Task<IActionResult> Delete(Guid? id)
     {
         if (id == null)
@@ -122,10 +124,7 @@ namespace DeviceManagement_WebApp.Controllers
             return NotFound();
         }
 
-        var device = await _context.Device
-            .Include(d => d.Category)
-            .Include(d => d.Zone)
-            .FirstOrDefaultAsync(m => m.DeviceId == id);
+        var device = _deviceRepository.GetById(id);
         if (device == null)
         {
             return NotFound();
@@ -139,11 +138,11 @@ namespace DeviceManagement_WebApp.Controllers
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> DeleteConfirmed(Guid id)
     {
-        var device = await _context.Device.FindAsync(id);
-        _context.Device.Remove(device);
-        await _context.SaveChangesAsync();
+        var device = _deviceRepository.GetById(id);
+        _deviceRepository.Remove(device);
+        _deviceRepository.Update(device);
         return RedirectToAction(nameof(Index));
-    }*/
+    }
 
     private bool DeviceExists(Guid id)
     {
