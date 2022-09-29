@@ -17,11 +17,19 @@ public class DeviceRepository : GenericRepository<Device>, IDeviceRepository
 
     }
 
+    public Category GetCategory()
+    {
+        throw new NotImplementedException();
+    }
+
     public Device GetMostRecentDevice()
     {
         return _context.Device.OrderByDescending(device => device.DateCreated).FirstOrDefault();
     }
 
-   
+    public Zone GetZone()
+    {
+        throw new NotImplementedException();
+    }
 }
 

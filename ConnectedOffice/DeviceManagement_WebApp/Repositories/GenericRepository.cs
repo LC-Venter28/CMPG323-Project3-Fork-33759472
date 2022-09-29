@@ -19,6 +19,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
     public void Add(T entity)
     {
         _context.Set<T>().Add(entity);
+        SaveChanges();
     }
 
     public void AddRange(IEnumerable<T> entities)
@@ -44,6 +45,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
     public void Remove(T entity)
     {
         _context.Set<T>().Remove(entity);
+        SaveChanges();
     }
 
     public void RemoveRange(IEnumerable<T> entities)
@@ -64,6 +66,21 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
     public bool ZoneExists(Guid id)
     {
         return true;
+    }
+
+    public void SaveChanges()
+    {
+        _context.SaveChangesAsync();
+    }
+
+    public Category GetCategory(Category category)
+    {
+        return _context.Category.Find(category.CategoryId);
+    }
+
+    public Zone GetZone(Zone zone)
+    {
+        return _context.Zone.Find(zone.ZoneId);
     }
 }
 

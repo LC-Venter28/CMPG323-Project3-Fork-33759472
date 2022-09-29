@@ -17,6 +17,7 @@ public interface IGenericRepository<T> where T : class
     bool CatExists(Guid id);
     bool DevExists(Guid id);
     bool ZoneExists(Guid id);
+    void SaveChanges();
 }
 
 

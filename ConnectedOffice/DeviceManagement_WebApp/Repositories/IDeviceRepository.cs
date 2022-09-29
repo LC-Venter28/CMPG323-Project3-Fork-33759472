@@ -11,5 +11,7 @@ using DeviceManagement_WebApp.Models;
 public interface IDeviceRepository : IGenericRepository<Device>
 {
     Device GetMostRecentDevice();
+    Category GetCategory();
+    Zone GetZone();
 }
 
